@@ -1,0 +1,17 @@
+{
+"Print to console": {
+	"prefix": "Dhruv",
+	"body": [
+		"#include<iostream>",
+		"using namespace std;",
+		"int main(){",
+		"$1",
+		" ",
+		"\treturn 0;",
+		"}",
+		
+		
+	],
+	"description": "Log output to console"
+}
+}
