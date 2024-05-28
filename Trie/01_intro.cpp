@@ -92,6 +92,29 @@ public:
         return searchUtil(root, word);
     }
 
+    void removeUtil(TrieNode* root, string word) { // to remove a word, just mark its isTerminal false so that word cannot be searched again
+         // base case
+        if(word.length() == 0) {
+            root->isTerminal = false;
+        }
+
+        int index = word[0] - 'A';
+        TrieNode* temp;
+
+        if(root->children[index] != NULL) { // present
+
+            temp = root->children[index];
+
+        }
+
+        searchUtil(temp, word.substr(1));
+
+    }
+
+    void removeWord(string word) {
+        removeUtil(root, word);
+    }
+
 };
 
 int main() {
@@ -102,7 +125,7 @@ int main() {
     t.insertWord("Do");
     t.insertWord("TIME");
 
-    if(t.searchWord("TIME ")) {
+    if(t.searchWord("TIME")) {
         cout<<"Present"<<endl;
     }
     else {

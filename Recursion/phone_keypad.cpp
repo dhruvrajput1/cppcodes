@@ -20,7 +20,6 @@ void phoneKeyPad(char *inputarr, int i, char* out, int j){
         out[j] = arr[index][k];
         phoneKeyPad(inputarr, i+1, out, j+1);
     }
-    
 
 }
 
@@ -30,5 +29,5 @@ int main(){
     cin>>inputarr;
 
     phoneKeyPad(inputarr, 0, out, 0);
-
+    
 }

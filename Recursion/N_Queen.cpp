@@ -71,7 +71,7 @@ bool NQueen(int board[100][100], int N, int i){
     for(int j = 0; j < N; j++){
         if(kyaMaiQueenDaalSaktaHu(board, i, j, N) == true){
             board[i][j] = 1;
-            if(NQueen(board, N, i+1) == true){
+            if(NQueen(board, N, i+1) == true){ // can we place the queen in the next row ?
                 return true;
             }
             

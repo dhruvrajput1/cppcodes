@@ -18,7 +18,7 @@ int main() {
     for(int i = n - 1; i >= 0; i--) {
         int curr = arr[i];
 
-        while(s.top() >= curr) {
+        while(s.top() >= curr and s.top() != -1) {
             s.pop();
         }
 

@@ -321,14 +321,14 @@ int main() {
     //     cout<<"False"<<endl;
     // }
 
-    // pairr x = isHeightBalanced(root);
+    pairr x = isHeightBalanced(root);
 
-    // if(x.isBalanced) {
-    //     cout<<"Balanced"<<endl;
-    // }
-    // else {
-    //     cout<<"Not balanced"<<endl;
-    // }
+    if(x.isBalanced) {
+        cout<<"Balanced"<<endl;
+    }
+    else {
+        cout<<"Not balanced"<<endl;
+    }
 
     // LinkedList l = BSTtoLL(root);
 
@@ -336,6 +336,8 @@ int main() {
 
     // printLevelWise(root);
 
+    if(isBalanced(root)) cout<<"Balanced"<<endl;
+    else cout<<"Not Balanced"<<endl;
 
 // 8 10 1 -1 -1 6 4 -1 -1 7 -1 -1 3 -1 14 13 -1 -1 -1
     delete root;

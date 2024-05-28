@@ -16,14 +16,14 @@ vector<int> nextSmallerElement(vector<int> height, int n)
     {
         int curr = height[i];
 
-        while (height[i] != -1 and height[s.top()] >= curr)
+        while (s.top() != -1 and s.top() >= curr)
         {
             s.pop();
         }
 
         ans[i] = s.top();
 
-        s.push(i);
+        s.push(curr);
     }
 
     return ans;
@@ -41,14 +41,14 @@ vector<int> prevSmallerElement(vector<int> height, int n)
     {
         int curr = height[i];
 
-        while (height[i] != -1 and height[s.top()] >= curr)
+        while (s.top() != -1 and s.top() >= curr)
         {
             s.pop();
         }
 
         ans[i] = s.top();
 
-        s.push(i);
+        s.push(curr);
     }
 
     return ans;

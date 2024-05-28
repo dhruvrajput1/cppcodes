@@ -11,10 +11,12 @@ void subsequences(char inputarr[], int i, char outputarr[], int j){
 
     // recursive case
     // without a // exclude
+    // excluding the current character
     subsequences(inputarr, i+1, outputarr, j); 
 
 
     // with a // include
+    // include the current character
     outputarr[j] = inputarr[i];
     subsequences(inputarr, i+1, outputarr, j+1);
 }

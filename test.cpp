@@ -1,25 +1,34 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
+
+void subsequences(int i, int* arr, vector<int> temp, int n) {
+    // base case
+    if(i == n) {
+        for(int j = 0; j < temp.size(); j++) {
+            cout<<temp[j]<<" ";
+        }
+        cout<<endl;
+        return ;
+    }
+
+    // recursive case
+    // not take
+    subsequences(i+1, arr, temp, n);
+
+    // take
+    temp.push_back(arr[i]);
+    subsequences(i+1, arr, temp, n);
+    temp.pop_back();
+}
 
 int main() {
 
-    int arr[] = {5, 4, 3, 1, 2};
-    
-    int n = sizeof(arr)/sizeof(int);
+    int arr[] = {3, 1, 2};
+    int n = sizeof(arr)/sizeof(arr[0]);
 
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n - i - 1; j++) {
-            if(arr[j] > arr[j+1]) {
-                swap(arr[j], arr[j+1]);
-            }
-        }
-    }
+    vector<int> temp;
 
-    for(int i = 0; i < n; i++) {
-        cout<<arr[i]<<" ";
-    }
-    cout<<endl;
-
+    subsequences(0, arr, temp, n);
 
     return 0;
 }

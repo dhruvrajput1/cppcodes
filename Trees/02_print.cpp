@@ -81,7 +81,7 @@ int countNodes(node* root) {
 }
 
 int height(node* root) {
-    // bases case
+    // base case
     if(root == NULL) {
         return 0;
     }
@@ -111,7 +111,7 @@ int diameter(node* root) {
 
     int h1 = height(root->left);
     int h2 = height(root->right);
-    int opt1 = h1 + h2;
+    int opt1 = h1 + h2; // diameter passes through root node
     int opt2 = diameter(root->left);
     int opt3 = diameter(root->right);
 

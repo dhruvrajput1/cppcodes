@@ -1,29 +1,61 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int binarySearch(int* arr, int s, int e, int key) {
-    int mid = (s + e)/2;
+void setSetBit(int x, int y, int l, int r)
+{
+    int n = y;
+    int ans = 0;
+    int product = 1;
+    while (n)
+    {
+        int rem = n % 2;
+        ans += rem * product;
+        product *= 10;
+        n /= 2;
+    }
 
-    if(arr[mid] == key) {
-        return mid;
+    string s = to_string(ans);
+
+    string str;
+
+    int k = 0;
+
+    for (int i = l-1; i <= r-1; i++)
+    {
+        if (i >= s.size())
+        {
+            break;
+        }
+        str.push_back(s[i]);
     }
-    else if(arr[mid] < key) {
-        return binarySearch(arr, mid + 1, e, key);
+
+    cout << str << endl;
+
+    int n1 = stoi(str);
+
+    int prod2 = 1;
+    int ans2 = 0;
+
+    while(n1) {
+
+        int rem = n1%10;
+        ans2 += prod2*rem;
+        prod2 *= 2;
+        n1 /= 10;
+
     }
-    else {
-        return binarySearch(arr, s, mid - 1, key);
-    }
+
+    cout<<x + ans2<<endl;
+
 }
 
-int main() {
+int main()
+{
 
-    int arr[] = {1, 2, 4, 5, 9};
+    int x = 44, y = 3;
+    int l = 1, r = 5;
 
-    int n = sizeof(arr)/sizeof(int);
-
-    int key = 9;
-
-    cout<<binarySearch(arr, 0, n, key)<<endl;
+    setSetBit(x, y, l, r);
 
     return 0;
 }

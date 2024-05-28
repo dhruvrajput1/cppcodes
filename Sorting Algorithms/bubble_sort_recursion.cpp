@@ -14,7 +14,7 @@ void bubbleSort(int arr[], int n, int i, int j){
     // recursive case
     else{
         if(arr[j] > arr[j+1]){
-        swap(arr[j], arr[j+1]);
+            swap(arr[j], arr[j+1]);
         }
         bubbleSort(arr, n, i, j+1);
     }

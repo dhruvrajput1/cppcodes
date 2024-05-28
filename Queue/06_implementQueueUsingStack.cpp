@@ -24,7 +24,7 @@ public:
 
         s1.pop();
 
-        while(s2.size() > 0) {
+        while(s2.size() > 0) { // here swapping will not work because order will be reversed
             s1.push(s2.top());
             s2.pop();
         }

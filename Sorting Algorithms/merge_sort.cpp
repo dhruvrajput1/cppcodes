@@ -55,8 +55,6 @@ void mergeSort(int* arr, int s, int e){
     mergeSort(arr, mid + 1, e);
 
     mergeTwoSortedArray(arr, s, e);
-
-
 }
 
 int main(){

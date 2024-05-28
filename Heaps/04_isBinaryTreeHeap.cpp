@@ -69,6 +69,27 @@ bool isMaxOrder(node* root) {
 
 }
 
+bool isMaxOrderAnotherApproach(node* root) {
+
+    if(root->left == NULL and root->right == NULL) {
+        return true;
+    }
+
+    if(root->right == NULL) {
+        return root->data > root->left->data;
+    }
+    else {
+
+        if(root->data > root->left->data and root->data > root->left->data and isMaxOrderAnotherApproach(root->left) and isMaxOrderAnotherApproach(root->right)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+}
+
 bool isBinaryTreeHeap(node* root) {
     int index = 0;
     int totalCount = count(root);

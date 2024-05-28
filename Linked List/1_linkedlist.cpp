@@ -177,8 +177,7 @@ void deleteAtAnyPosition(node* &head, node* &tail, int pos){
             delete nodeToDelete;
         }
     }
-
-
+    
 }
 
 bool searchIter(node* head, int key){

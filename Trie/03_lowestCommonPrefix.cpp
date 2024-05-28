@@ -82,7 +82,7 @@ public:
                 break;
             }
 
-            if(root->isTerminal) {
+            if(root->isTerminal) { // means one string is traversed completely
                 break;
             }
 

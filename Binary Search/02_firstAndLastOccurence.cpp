@@ -13,7 +13,7 @@ int firstOccurence(int *arr, int n, int key) {
 
         if(arr[mid] == key) {
             ans = mid;
-            e = mid-1;
+            e = mid-1; // because we want the lowest index
         }
         else if(key < arr[mid]) {
             e = mid - 1;
