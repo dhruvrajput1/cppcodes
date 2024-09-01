@@ -147,15 +147,33 @@ public:
     }
 
     void erase(string key) {
-        // int idx = hashFunction(key);
+        int idx = hashFunction(key);
 
-        // node<T>* temp = table[idx];
+        node<T>* prev = NULL;
+        node<T>* temp = table[idx];
 
-        // while(temp != NULL) {
-        //     if(temp->key == key) {
-        //         delete table[idx];
-        //     }
-        // }
+        while(temp != NULL) {
+            
+            if(temp->key == key) {
+                if(prev == NULL) { // node to delete is head node
+                    table[idx] = temp->next;
+                }
+                else {
+                    prev->next = temp->next;
+                }
+
+                // Delete the node and decrement the current size
+                temp->next = NULL; // To avoid recursive deletion in the destructor
+                delete temp;
+                currSize--;
+
+                return; // Node deleted; exit the function
+            }
+
+            prev = temp;
+            temp = temp->next;
+            
+        }
     }
 
 };
