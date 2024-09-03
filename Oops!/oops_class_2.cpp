@@ -165,13 +165,5 @@ int main(){
     cout<<"Car E details are: "<<endl;
     E.printInfo();
 
-    
-
-    int a = 10;
-    int b;
-
-    b = a;
-    
-
     return 0;
 }

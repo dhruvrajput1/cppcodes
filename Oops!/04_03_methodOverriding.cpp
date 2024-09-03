@@ -10,7 +10,7 @@ public:
 
 class Dog : public Animal {
 public:
-    void speak() { // same function as parent class
+    void speak() { // same function as parent class                          
         cout<<"barking..."<<endl;
     }
 };
