@@ -19,7 +19,7 @@ int main() {
 
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq; // min heap
 
-    pq.push({0, 0}); // wt, node
+    pq.push({0, 0}); // wt, node take pq as {wt, {node, parent}} if we want to print the MST
 
     vector<int> vis (n, 0);
 
